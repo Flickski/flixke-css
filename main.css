@@ -1,35 +1,75 @@
-/* FLIXKE Theme — Clean, Cinematic, High Contrast */
-body {
-    --theme-primary: crimson;
-    --theme-accent: black;
-    background-color: #0e0e0e;
-    color: #ffffff;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+/* ─── FLIXKE Cinematic Base ─────────────────────────────────────────── */
+html, body, .backgroundContainer {
+  background-color: #111 !important;
+  color: #eee !important;
+}
+.cardContent-button, .itemDetailImage {
+  border-radius: 8px !important;
 }
 
-/* Header Branding */
+/* ─── Header & Tabs Glowing Brand ─────────────────────────────────── */
+.skinHeader, .mainDrawer {
+  background: #1a1a1a !important;
+  color: #fff !important;
+}
 .headerTitle {
-    font-family: "Orbitron", sans-serif;
-    font-size: 1.6em;
-    letter-spacing: 2px;
-    color: crimson;
-    text-shadow: 0 0 5px #ff0000;
+  font-family: "Orbitron", sans-serif !important;
+  font-size: 1.6em !important;
+  letter-spacing: 2px !important;
+  color: crimson !important;
+  text-shadow: 0 0 8px #e60026 !important;
+}
+.headerTabs.sectionTabs, .emby-tab-button {
+  font-size: 115% !important;
+  padding: 1.2em 1em !important;
 }
 
-/* Card Hover Effect */
+/* ─── Card & Button Styles ───────────────────────────────────────── */
+.button-flat, button, .paper-btn {
+  background-color: crimson !important;
+  color: #fff !important;
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+}
+.button-flat:hover, button:hover {
+  filter: brightness(1.1) !important;
+}
 .cardOverlayButton {
-    background-color: rgba(220, 20, 60, 0.75) !important;
+  background: rgba(220,20,60,0.8) !important;
 }
 
-/* Background Glow */
-.dialogBackdrop {
-    background: radial-gradient(circle, rgba(220,20,60,0.1) 0%, rgba(0,0,0,0.9) 100%);
+/* ─── Home & Library Layout Fixes ────────────────────────────────── */
+/* Disable image carousel, enable wrap */
+@media (min-width: 50em) {
+  .homePage .emby-scroller {
+    margin-right: 0 !important;
+  }
+  .homePage .emby-scrollbuttons {
+    display: none !important;
+  }
+  .homePage .itemsContainer {
+    flex-wrap: wrap !important;
+  }
 }
 
-/* Custom Button Style */
-.button-flat {
-    border-radius: 12px;
-    background-color: crimson;
-    color: white;
-    font-weight: bold;
+/* ─── Compact Episode Thumbnails ─────────────────────────────────── */
+.listItemImage-large.itemAction.lazy {
+  height: 110px !important;
+}
+.listItem-content {
+  height: 115px !important;
+}
+
+/* ─── Enhanced Indicators ─────────────────────────────────────────── */
+.playedIndicator {
+  background: crimson !important;
+}
+.countIndicator, .indicator {
+  background: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* ─── Personal Touches ───────────────────────────────────────────── */
+.headerRight .userName {
+  color: gold !important;
+  font-style: italic !important;
 }

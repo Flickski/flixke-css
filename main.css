@@ -1,99 +1,108 @@
-/* ─── FLIXKE Base Style ───────────────────────────────────────────── */
+/* === BASE === */
 html, body, .backgroundContainer {
-  background-color: #0a0a0a !important;
-  color: #ffffff !important;
-  font-family: "Segoe UI", Tahoma, sans-serif !important;
+  background-color: #000 !important;
+  color: #fff !important;
+  font-family: "Segoe UI", "Helvetica Neue", sans-serif !important;
 }
 
-/* ─── Header Branding ─────────────────────────────────────────────── */
+/* === HEADER / NAVIGATION === */
+.skinHeader, .mainDrawer {
+  background-color: #0d0d0d !important;
+  border-bottom: 2px solid #111;
+}
 .headerTitle {
   font-family: "Orbitron", sans-serif !important;
-  font-size: 1.6em !important;
-  letter-spacing: 1px;
+  font-size: 1.7em !important;
   color: #e50914 !important;
-  text-shadow: 0 0 8px #ff0000;
+  text-shadow: 0 0 10px #ff0000;
 }
 
-/* ─── Navigation + Drawer ─────────────────────────────────────────── */
-.skinHeader, .mainDrawer {
-  background-color: #111 !important;
-  color: #fff !important;
-  border-bottom: 1px solid #222;
-}
-.mainDrawerIcon {
-  color: #e50914 !important;
-}
-
-/* ─── Poster Cards with White Outline ─────────────────────────────── */
-.card, .cardBox, .cardImageContainer {
-  border: 1px solid rgba(255, 255, 255, 0.25) !important;
-  border-radius: 6px !important;
-  transition: all 0.3s ease-in-out !important;
-}
-.card:hover, .cardBox:hover {
-  transform: scale(1.03);
-  border-color: #ffffff !important;
-}
-
-/* ─── Glowing Library Folders ─────────────────────────────────────── */
-.cardImageContainer.folder, .cardImageContainer[data-type="folder"] {
-  box-shadow: 0 0 10px 2px rgba(229, 9, 20, 0.5) !important;
-  transition: box-shadow 0.3s ease-in-out !important;
-}
-.cardImageContainer.folder:hover {
-  box-shadow: 0 0 18px 4px rgba(229, 9, 20, 0.8) !important;
-}
-
-/* ─── Tab Section Styling ─────────────────────────────────────────── */
-.headerTabs.sectionTabs, .emby-tab-button {
-  font-size: 1.1em !important;
-  color: #ffffff !important;
-  background: transparent;
+/* === NAV TABS === */
+.emby-tab-button {
+  font-weight: bold;
+  text-transform: uppercase;
   border-bottom: 2px solid transparent;
 }
-.emby-tab-button:hover, .emby-tab-button.emby-tab-active {
-  color: #e50914 !important;
+.emby-tab-button.emby-tab-active {
   border-bottom: 2px solid #e50914 !important;
+  color: #e50914 !important;
 }
 
-/* ─── Custom Buttons ──────────────────────────────────────────────── */
-.button-flat, button, .paper-btn {
+/* === POSTERS === */
+.cardImageContainer, .cardBox, .card {
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease-in-out;
+}
+.cardImageContainer:hover {
+  transform: scale(1.03);
+  border-color: #fff !important;
+  box-shadow: 0 0 10px #e50914;
+}
+
+/* === LIBRARY FOLDERS === */
+.cardImageContainer.folder {
+  box-shadow: 0 0 15px 4px rgba(255, 0, 0, 0.5) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.cardImageContainer.folder:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px 6px rgba(255, 0, 0, 0.8) !important;
+}
+
+/* === SECTION TITLES === */
+.sectionTitle {
+  font-size: 1.3em;
+  color: white;
+  text-transform: uppercase;
+  border-left: 4px solid crimson;
+  padding-left: 10px;
+  margin-bottom: 0.5em;
+}
+
+/* === USERNAME TOP RIGHT === */
+.userName {
+  color: gold !important;
+  font-weight: bold;
+  text-shadow: 0 0 5px rgba(255, 215, 0, 0.7);
+}
+
+/* === BUTTONS === */
+.button-flat, .paper-btn, button {
   background-color: #e50914 !important;
   color: #fff !important;
   border-radius: 10px !important;
-  font-weight: bold;
+  font-weight: 700;
 }
-.button-flat:hover {
-  background-color: #ff0a16 !important;
+.button-flat:hover, button:hover {
+  background-color: #ff1a1a !important;
 }
 
-/* ─── Episode & List Styling ─────────────────────────────────────── */
+/* === LIST / EPISODES === */
 .listItem {
-  border-bottom: 1px solid #222 !important;
-}
-.listItem-content {
   background-color: #111 !important;
+  border-bottom: 1px solid #222;
 }
 .listItemImage-large {
-  border-radius: 4px;
+  border-radius: 5px !important;
 }
 
-/* ─── Playstate & Indicators ──────────────────────────────────────── */
+/* === INDICATORS === */
 .playedIndicator {
   background-color: #e50914 !important;
 }
 .countIndicator {
-  background-color: rgba(255, 255, 255, 0.2) !important;
-  border: 1px solid #fff;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border: 1px solid #e50914;
 }
 
-/* ─── Personal Touch: FLIXKE Username Highlight ───────────────────── */
-.userName {
-  color: gold !important;
-  font-style: italic;
-}
-
-/* ─── Remove Scroll Arrows on Home Rows ───────────────────────────── */
+/* === SCROLL BUTTONS OFF === */
 .emby-scrollbuttons {
   display: none !important;
+}
+
+/* === TRANSITIONS AND EFFECTS === */
+.cardImageContainer, .listItem {
+  transition: all 0.2s ease-in-out;
 }

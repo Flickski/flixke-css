@@ -28,29 +28,31 @@ html, body, .backgroundContainer {
   color: #e50914 !important;
 }
 
-/* === POSTERS === */
-.cardImageContainer, .cardBox, .card {
-  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+/* === POSTERS (MOVIES/SHOWS) === */
+.cardImageContainer img {
+  outline: 2px solid rgba(255,255,255,0.2) !important;
+  border-radius: 6px !important;
+  transition: all 0.3s ease-in-out;
+}
+.cardImageContainer:hover img {
+  outline: 2px solid #ffffff !important;
+  box-shadow: 0 0 10px #e50914 !important;
+  transform: scale(1.03);
+  z-index: 10;
+}
+
+/* === LIBRARY FOLDER GLOW ON HOMEPAGE === */
+.cardBox[data-type="CollectionFolder"] .primaryImageWrapper {
+  box-shadow: 0 0 12px 3px rgba(255, 0, 0, 0.4) !important;
   border-radius: 8px !important;
   transition: all 0.3s ease-in-out;
 }
-.cardImageContainer:hover {
-  transform: scale(1.03);
-  border-color: #fff !important;
-  box-shadow: 0 0 10px #e50914;
-}
-
-/* === LIBRARY FOLDERS === */
-.cardImageContainer.folder {
-  box-shadow: 0 0 15px 4px rgba(255, 0, 0, 0.5) !important;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.cardImageContainer.folder:hover {
+.cardBox[data-type="CollectionFolder"]:hover .primaryImageWrapper {
+  box-shadow: 0 0 24px 5px rgba(255, 0, 0, 0.8) !important;
   transform: scale(1.05);
-  box-shadow: 0 0 25px 6px rgba(255, 0, 0, 0.8) !important;
 }
 
-/* === SECTION TITLES === */
+/* === SECTION HEADERS === */
 .sectionTitle {
   font-size: 1.3em;
   color: white;
@@ -78,7 +80,7 @@ html, body, .backgroundContainer {
   background-color: #ff1a1a !important;
 }
 
-/* === LIST / EPISODES === */
+/* === LISTS / EPISODES === */
 .listItem {
   background-color: #111 !important;
   border-bottom: 1px solid #222;
@@ -102,7 +104,7 @@ html, body, .backgroundContainer {
   display: none !important;
 }
 
-/* === TRANSITIONS AND EFFECTS === */
+/* === GENERAL ANIMATIONS === */
 .cardImageContainer, .listItem {
   transition: all 0.2s ease-in-out;
 }

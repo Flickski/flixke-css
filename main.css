@@ -1,75 +1,99 @@
-/* ─── FLIXKE Cinematic Base ─────────────────────────────────────────── */
+/* ─── FLIXKE Base Style ───────────────────────────────────────────── */
 html, body, .backgroundContainer {
-  background-color: #111 !important;
-  color: #eee !important;
-}
-.cardContent-button, .itemDetailImage {
-  border-radius: 8px !important;
+  background-color: #0a0a0a !important;
+  color: #ffffff !important;
+  font-family: "Segoe UI", Tahoma, sans-serif !important;
 }
 
-/* ─── Header & Tabs Glowing Brand ─────────────────────────────────── */
-.skinHeader, .mainDrawer {
-  background: #1a1a1a !important;
-  color: #fff !important;
-}
+/* ─── Header Branding ─────────────────────────────────────────────── */
 .headerTitle {
   font-family: "Orbitron", sans-serif !important;
   font-size: 1.6em !important;
-  letter-spacing: 2px !important;
-  color: crimson !important;
-  text-shadow: 0 0 8px #e60026 !important;
-}
-.headerTabs.sectionTabs, .emby-tab-button {
-  font-size: 115% !important;
-  padding: 1.2em 1em !important;
+  letter-spacing: 1px;
+  color: #e50914 !important;
+  text-shadow: 0 0 8px #ff0000;
 }
 
-/* ─── Card & Button Styles ───────────────────────────────────────── */
-.button-flat, button, .paper-btn {
-  background-color: crimson !important;
+/* ─── Navigation + Drawer ─────────────────────────────────────────── */
+.skinHeader, .mainDrawer {
+  background-color: #111 !important;
   color: #fff !important;
-  border-radius: 12px !important;
-  font-weight: 600 !important;
+  border-bottom: 1px solid #222;
 }
-.button-flat:hover, button:hover {
-  filter: brightness(1.1) !important;
-}
-.cardOverlayButton {
-  background: rgba(220,20,60,0.8) !important;
+.mainDrawerIcon {
+  color: #e50914 !important;
 }
 
-/* ─── Home & Library Layout Fixes ────────────────────────────────── */
-/* Disable image carousel, enable wrap */
-@media (min-width: 50em) {
-  .homePage .emby-scroller {
-    margin-right: 0 !important;
-  }
-  .homePage .emby-scrollbuttons {
-    display: none !important;
-  }
-  .homePage .itemsContainer {
-    flex-wrap: wrap !important;
-  }
+/* ─── Poster Cards with White Outline ─────────────────────────────── */
+.card, .cardBox, .cardImageContainer {
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  border-radius: 6px !important;
+  transition: all 0.3s ease-in-out !important;
+}
+.card:hover, .cardBox:hover {
+  transform: scale(1.03);
+  border-color: #ffffff !important;
 }
 
-/* ─── Compact Episode Thumbnails ─────────────────────────────────── */
-.listItemImage-large.itemAction.lazy {
-  height: 110px !important;
+/* ─── Glowing Library Folders ─────────────────────────────────────── */
+.cardImageContainer.folder, .cardImageContainer[data-type="folder"] {
+  box-shadow: 0 0 10px 2px rgba(229, 9, 20, 0.5) !important;
+  transition: box-shadow 0.3s ease-in-out !important;
+}
+.cardImageContainer.folder:hover {
+  box-shadow: 0 0 18px 4px rgba(229, 9, 20, 0.8) !important;
+}
+
+/* ─── Tab Section Styling ─────────────────────────────────────────── */
+.headerTabs.sectionTabs, .emby-tab-button {
+  font-size: 1.1em !important;
+  color: #ffffff !important;
+  background: transparent;
+  border-bottom: 2px solid transparent;
+}
+.emby-tab-button:hover, .emby-tab-button.emby-tab-active {
+  color: #e50914 !important;
+  border-bottom: 2px solid #e50914 !important;
+}
+
+/* ─── Custom Buttons ──────────────────────────────────────────────── */
+.button-flat, button, .paper-btn {
+  background-color: #e50914 !important;
+  color: #fff !important;
+  border-radius: 10px !important;
+  font-weight: bold;
+}
+.button-flat:hover {
+  background-color: #ff0a16 !important;
+}
+
+/* ─── Episode & List Styling ─────────────────────────────────────── */
+.listItem {
+  border-bottom: 1px solid #222 !important;
 }
 .listItem-content {
-  height: 115px !important;
+  background-color: #111 !important;
+}
+.listItemImage-large {
+  border-radius: 4px;
 }
 
-/* ─── Enhanced Indicators ─────────────────────────────────────────── */
+/* ─── Playstate & Indicators ──────────────────────────────────────── */
 .playedIndicator {
-  background: crimson !important;
+  background-color: #e50914 !important;
 }
-.countIndicator, .indicator {
-  background: rgba(255, 255, 255, 0.15) !important;
+.countIndicator {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  border: 1px solid #fff;
 }
 
-/* ─── Personal Touches ───────────────────────────────────────────── */
-.headerRight .userName {
+/* ─── Personal Touch: FLIXKE Username Highlight ───────────────────── */
+.userName {
   color: gold !important;
-  font-style: italic !important;
+  font-style: italic;
+}
+
+/* ─── Remove Scroll Arrows on Home Rows ───────────────────────────── */
+.emby-scrollbuttons {
+  display: none !important;
 }
